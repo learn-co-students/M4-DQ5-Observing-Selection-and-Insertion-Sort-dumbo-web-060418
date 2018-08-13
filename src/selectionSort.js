@@ -1,4 +1,18 @@
 function selectionSort(arr) {
-  // your code here!
-  // arr is an array of unsorted integers (i.e. [3, 5, 1])
+
+  for (let i = 0; i < arr.length; i++) {
+    let minIndex = i
+    let min = arr[i];
+
+    for(let k = i + 1; k < arr.length; k++) {
+      if (arr[k] < min) {
+        minIndex = k
+        min = arr[k]
+      }
+    }
+
+    [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
+  }
+
+  return arr
 }
